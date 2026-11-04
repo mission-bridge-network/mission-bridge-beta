@@ -24,6 +24,16 @@
   .hv8:hover{color: #fff !important}
   .hv9:hover{color: #fff !important}
 
+  .photo-bg { background-size: cover !important; background-position: center right !important; background-repeat: no-repeat !important; }
+  .photo-navy  { background-image: linear-gradient(90deg, rgba(27,51,95,0.97) 0%, rgba(27,51,95,0.88) 45%, rgba(27,51,95,0.35) 100%), var(--photo) !important; }
+  .photo-slate { background-image: linear-gradient(90deg, rgba(238,242,245,0.98) 0%, rgba(238,242,245,0.92) 50%, rgba(238,242,245,0.15) 100%), var(--photo) !important; }
+  .photo-paper { background-image: linear-gradient(90deg, rgba(246,243,238,0.98) 0%, rgba(246,243,238,0.92) 50%, rgba(246,243,238,0.15) 100%), var(--photo) !important; }
+
+  @media (max-width: 900px) {
+    .photo-navy  { background-image: linear-gradient(rgba(27,51,95,0.86), rgba(27,51,95,0.86)), var(--photo) !important; }
+    .photo-slate { background-image: linear-gradient(rgba(238,242,245,0.9), rgba(238,242,245,0.9)), var(--photo) !important; }
+    .photo-paper { background-image: linear-gradient(rgba(246,243,238,0.9), rgba(246,243,238,0.9)), var(--photo) !important; }
+  }
   @media (max-width: 900px) {
     header nav { display: none !important; }
     [style*="padding: 0 40px"] { padding-left: 20px !important; padding-right: 20px !important; }
@@ -34,8 +44,6 @@
     p[style*="font-size: 54px"], p[style*="font-size: 38px"], p[style*="font-size: 34px"] { font-size: 28px !important; }
     [style*="font-size: 96px"] { font-size: 56px !important; }
     [style*="padding: 116px 0"], [style*="padding: 104px 0"], [style*="padding: 96px 0"], [style*="padding: 88px 0"] { padding-top: 64px !important; padding-bottom: 64px !important; }
-    [style*="height: 480px"], [style*="height: 420px"], [style*="height: 380px"] { height: 260px !important; }
-    .photo-band { height: 220px !important; }
   }
 </style>
 </head>
@@ -63,7 +71,7 @@
 
   
   <main>
-    <section style="background: var(--mbm-light-slate); border-bottom: 1px solid var(--mbm-line);">
+    <section style="background: var(--mbm-light-slate); border-bottom: 1px solid var(--mbm-line); --photo: url(assets/bridges/forest-suspension-purple.jpg);" class="photo-bg photo-slate">
       <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px;">
         <div style="padding: 88px 0 80px; max-width: 900px;">
           <div style="font-family: var(--font-utility); font-weight: 800; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mbm-blue); margin-bottom: 20px;">How we work</div>
@@ -72,8 +80,6 @@
         </div>
       </div>
     </section>
-    <div class="photo-band" style="height:380px;background:url(assets/bridges/forest-suspension-purple.jpg) center/cover no-repeat;"></div>
-
 
     <section style="background: #fff;">
       <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px;">
