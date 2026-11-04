@@ -1,0 +1,326 @@
+/* =============================================================
+   Mission Bridge Marketing — Core Tokens
+   Colors, typography, spacing, radius, shadow, and semantic
+   element styles. Import this in any Mission Bridge artifact.
+   ============================================================= */
+
+/* ----- Web fonts (local TTFs in /fonts) -------------------- */
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("fonts/IBMPlexSans-VariableFont.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("fonts/IBMPlexSans-Italic-VariableFont.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("fonts/SourceSans3-VariableFont.ttf") format("truetype-variations");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("fonts/SourceSans3-Italic-VariableFont.ttf") format("truetype-variations");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/Archivo-VariableFont.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/Archivo-Italic-VariableFont.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neuton";
+  src: url("fonts/Neuton-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neuton";
+  src: url("fonts/Neuton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neuton";
+  src: url("fonts/Neuton-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neuton";
+  src: url("fonts/Neuton-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neuton";
+  src: url("fonts/Neuton-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- Primary brand palette ---------- */
+  --mbm-navy: #1B335F;          /* Foundation Navy — authority */
+  --mbm-blue: #006FB6;          /* Bridge Blue — connection */
+  --mbm-teal: #38A37D;          /* Mission Teal — action */
+
+  /* ---------- Secondary support ---------- */
+  --mbm-sky: #77B9D8;
+  --mbm-deep-teal: #247B62;
+  --mbm-muted-blue: #DBE9F2;
+  --mbm-muted-green: #E2F0EA;
+
+  /* ---------- Neutrals ---------- */
+  --mbm-ink: #222832;
+  --mbm-slate: #6D7480;
+  --mbm-line: #C7CED7;
+  --mbm-light-slate: #EEF2F5;
+  --mbm-warm-paper: #F6F3EE;
+  --mbm-white: #FFFFFF;
+
+  /* ---------- Semantic (status only — not brand) ---------- */
+  --mbm-success: #2E7D5B;       --mbm-success-tint: #E6F3EC;
+  --mbm-warning: #C58A1C;       --mbm-warning-tint: #F9EFD8;
+  --mbm-critical: #B34A3C;      --mbm-critical-tint: #F8E4E1;
+  --mbm-info: #4F7FA3;          --mbm-info-tint: #E7F0F6;
+  --mbm-outlier: #7A5C8E;       --mbm-outlier-tint: #EEE7F3;
+
+  /* ---------- Semantic surface tokens ---------- */
+  --bg: var(--mbm-white);
+  --bg-soft: var(--mbm-warm-paper);
+  --bg-panel: var(--mbm-light-slate);
+  --bg-inverse: var(--mbm-navy);
+  --fg: var(--mbm-ink);
+  --fg-muted: var(--mbm-slate);
+  --fg-on-dark: var(--mbm-white);
+  --border: var(--mbm-line);
+  --rule: var(--mbm-navy);
+
+  /* ---------- Typography families ---------- */
+  --font-display: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-editorial: "Neuton", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --font-utility: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* ---------- Type scale (display: IBM Plex Sans) ---------- */
+  --t-h1-size: 72px;            /* 56–88 range */
+  --t-h1-weight: 700;
+  --t-h1-leading: 1.04;
+  --t-h1-tracking: -0.02em;
+
+  --t-h2-size: 36px;            /* 32–40 */
+  --t-h2-weight: 700;
+  --t-h2-leading: 1.12;
+  --t-h2-tracking: -0.01em;
+
+  --t-h3-size: 24px;            /* 22–28 */
+  --t-h3-weight: 600;
+  --t-h3-leading: 1.25;
+  --t-h3-tracking: -0.005em;
+
+  /* H4 / Label — Archivo 800 uppercase */
+  --t-h4-size: 14px;
+  --t-h4-weight: 800;
+  --t-h4-tracking: 0.08em;
+
+  /* Eyebrow — Archivo 800 uppercase */
+  --t-eyebrow-size: 12px;
+  --t-eyebrow-weight: 800;
+  --t-eyebrow-tracking: 0.18em;
+
+  /* Strategic Subhead — Neuton italic */
+  --t-strategic-size: 32px;     /* 26–44 */
+  --t-strategic-weight: 400;
+  --t-strategic-leading: 1.25;
+
+  /* Body — Source Sans 3 */
+  --t-body-size: 17px;          /* 16–18 */
+  --t-body-weight: 400;
+  --t-body-leading: 1.55;
+
+  /* Small / Meta */
+  --t-small-size: 13px;
+  --t-small-weight: 600;
+  --t-small-tracking: 0.01em;
+
+  /* ---------- Spacing scale (8px grid) ---------- */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 120px;
+
+  /* ---------- Radius — restrained, not decorative ---------- */
+  --radius-none: 0;
+  --radius-sm: 2px;             /* fields, small chips */
+  --radius-md: 4px;             /* buttons, cards default */
+  --radius-lg: 8px;              /* large cards, modals */
+  --radius-pill: 999px;          /* status pills only */
+
+  /* ---------- Borders & rules ---------- */
+  --border-hairline: 1px solid var(--mbm-line);
+  --rule-navy: 4px solid var(--mbm-navy);
+  --rule-navy-thin: 2px solid var(--mbm-navy);
+
+  /* ---------- Shadow system — soft, layered, never punchy ---------- */
+  --shadow-xs: 0 1px 2px rgba(27, 51, 95, 0.06);
+  --shadow-sm: 0 2px 6px rgba(27, 51, 95, 0.08);
+  --shadow-md: 0 6px 18px rgba(27, 51, 95, 0.10);
+  --shadow-lg: 0 16px 40px rgba(27, 51, 95, 0.14);
+  --shadow-inset: inset 0 0 0 1px rgba(27, 51, 95, 0.08);
+
+  /* ---------- Motion ---------- */
+  --ease-standard: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+
+  /* ---------- Layout ---------- */
+  --container-max: 1200px;
+  --container-narrow: 760px;    /* long-form reading */
+}
+
+/* =============================================================
+   Semantic element styles
+   ============================================================= */
+
+.mbm-body,
+body.mbm {
+  font-family: var(--font-body);
+  font-size: var(--t-body-size);
+  font-weight: var(--t-body-weight);
+  line-height: var(--t-body-leading);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.mbm-h1, h1.mbm {
+  font-family: var(--font-display);
+  font-weight: var(--t-h1-weight);
+  font-size: var(--t-h1-size);
+  line-height: var(--t-h1-leading);
+  letter-spacing: var(--t-h1-tracking);
+  color: var(--mbm-navy);
+  margin: 0;
+}
+
+.mbm-h2, h2.mbm {
+  font-family: var(--font-display);
+  font-weight: var(--t-h2-weight);
+  font-size: var(--t-h2-size);
+  line-height: var(--t-h2-leading);
+  letter-spacing: var(--t-h2-tracking);
+  color: var(--mbm-navy);
+  margin: 0;
+}
+
+.mbm-h3, h3.mbm {
+  font-family: var(--font-display);
+  font-weight: var(--t-h3-weight);
+  font-size: var(--t-h3-size);
+  line-height: var(--t-h3-leading);
+  letter-spacing: var(--t-h3-tracking);
+  color: var(--mbm-navy);
+  margin: 0;
+}
+
+.mbm-h4, h4.mbm {
+  font-family: var(--font-utility);
+  font-weight: var(--t-h4-weight);
+  font-size: var(--t-h4-size);
+  letter-spacing: var(--t-h4-tracking);
+  text-transform: uppercase;
+  color: var(--mbm-navy);
+  margin: 0;
+}
+
+.mbm-eyebrow {
+  font-family: var(--font-utility);
+  font-weight: var(--t-eyebrow-weight);
+  font-size: var(--t-eyebrow-size);
+  letter-spacing: var(--t-eyebrow-tracking);
+  text-transform: uppercase;
+  color: var(--mbm-blue);
+  display: inline-block;
+}
+
+.mbm-strategic {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: var(--t-strategic-weight);
+  font-size: var(--t-strategic-size);
+  line-height: var(--t-strategic-leading);
+  color: var(--mbm-navy);
+}
+
+.mbm-body-text, p.mbm {
+  font-family: var(--font-body);
+  font-size: var(--t-body-size);
+  line-height: var(--t-body-leading);
+  color: var(--fg);
+}
+
+.mbm-meta, small.mbm {
+  font-family: var(--font-body);
+  font-size: var(--t-small-size);
+  font-weight: var(--t-small-weight);
+  letter-spacing: var(--t-small-tracking);
+  color: var(--fg-muted);
+}
+
+.mbm-label {
+  font-family: var(--font-utility);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mbm-slate);
+}
+
+/* Top-of-document navy rule */
+.mbm-rule {
+  height: 4px;
+  background: var(--mbm-navy);
+  border: 0;
+  margin: 0;
+}
+.mbm-rule--thin { height: 2px; }
+.mbm-rule--blue { background: var(--mbm-blue); }
+.mbm-rule--teal { background: var(--mbm-teal); }
